@@ -9,16 +9,16 @@
     content="Mstar AI transforms your data into intelligent knowledge networks using graph-based AI for advanced query answering and deep contextual search.">
   <meta name="keywords"
     content="Mstar AI, knowledge inference, graph-based AI, semantic search, concept graph, intelligent data insights, AI knowledge platform">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WN874R45JS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN874R45JS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-WN874R45JS');
-</script> 
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    gtag('config', 'G-WN874R45JS');
+  </script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -80,7 +80,7 @@
               systems understand and retrieve complex information through advanced graph-based retrieval.</p>
             <div class="hero-buttons">
               <a href="#" class="cta-button">Start Free Trial</a>
-              <a href="#" class="btn-secondary">Watch Demo</a>
+              <a href="#demo" class="btn-secondary">Watch Demo</a>
             </div>
           </div>
           <div class="hero-visual">
@@ -88,6 +88,50 @@
             <img src="maingraph.png" alt="Mstar Application Screenshot" class="hero-image">
             <img src="qa.png" alt="Mstar Screenshot 2" class="hero-imagel">
 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-demo" id="demo">
+      <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+      </div>
+
+      <div class="video-container">
+        <div class="video-title">
+          <h2>See M* in Action</h2>
+          <p>Watch how M* works :P</p>
+        </div>
+
+        <div class="video-placeholder" onclick="playVideo()">
+          <div class="play-button"></div>
+        </div>
+
+        <div class="video-overlay" id="videoOverlay">
+          <button class="close-video" onclick="closeVideo()">✕</button>
+          <div style="color: #fff; text-align: center; font-size: 1.2rem;">
+            <p>🎬 Video demo would play here</p>
+            <p style="color: #b0b0b0; font-size: 1rem; margin-top: 1rem;">
+              <!-- Replace placeholder text with actual video -->
+              <!-- <video id="demoVideo" muted playsinline controls preload="metadata">
+                <source src="input.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video> -->
+            <div class="video-wrapper">
+              <iframe id="demoVideo"
+                src="https://www.youtube.com/embed/fSd1ADT9sb0?si=V8yB-mWxcVa_PyU1?autoplay=1&mute=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            </p>
           </div>
         </div>
       </div>
@@ -215,6 +259,50 @@
       </div>
     </section>
   </main>
+  <script>
+    function playVideo() {
+      const videoOverlay = document.getElementById('videoOverlay');
+      const video = document.getElementById('demoVideo');
+
+      videoOverlay.classList.add('active');
+
+      // Auto-play the video when overlay opens
+      video.play().catch(e => {
+        console.log('Auto-play was prevented:', e);
+      });
+
+      // Pause background animations for better performance
+      document.body.style.animationPlayState = 'paused';
+    }
+
+    function closeVideo() {
+      const videoOverlay = document.getElementById('videoOverlay');
+      const video = document.getElementById('demoVideo');
+
+      videoOverlay.classList.remove('active');
+
+      // Pause and reset video
+      video.pause();
+      video.currentTime = 0;
+
+      // Resume background animations
+      document.body.style.animationPlayState = 'running';
+    }
+
+    // Close video when clicking outside the video element
+    document.getElementById('videoOverlay').addEventListener('click', function (e) {
+      if (e.target === this) {
+        closeVideo();
+      }
+    });
+
+    // Close video with Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.getElementById('videoOverlay').classList.contains('active')) {
+        closeVideo();
+      }
+    });
+  </script>
 
   <footer>
     <div class="container">
