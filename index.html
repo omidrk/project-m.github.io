@@ -103,45 +103,62 @@
         <div class="floating-element"></div>
       </div>
 
-      <div class="video-container">
+
+      <!-- Video 1 -->
+      <div class="video-container" style="margin-bottom: 50px;">
         <div class="video-title">
-          <h2>See M* in Action</h2>
-          <p>Watch how M* works :P</p>
+          <h2>PART 1</h2>
+          <p>M* Iterative Concept-Type Path Retrieval and Query Decomposition. PART 1</p>
         </div>
+        <div class="video-wrapper">
 
-        <div class="video-placeholder" onclick="playVideo()">
-          <div class="play-button"></div>
-        </div>
+          <div class="video-placeholder" onclick="playVideo('videoOverlay1', 'demoVideo1')">
+            <div class="play-button"></div>
+          </div>
 
-        <div class="video-overlay" id="videoOverlay">
-          <button class="close-video" onclick="closeVideo()">✕</button>
-          <div style="color: #fff; text-align: center; font-size: 1.2rem;">
-            <p>🎬 Video demo would play here</p>
-            <p style="color: #b0b0b0; font-size: 1rem; margin-top: 1rem;">
-              <!-- Replace placeholder text with actual video -->
-              <!-- <video id="demoVideo" muted playsinline controls preload="metadata">
-                <source src="input.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video> -->
-              <iframe id="demoVideo"
-                src="https://www.youtube.com/embed/fSd1ADT9sb0?si=V8yB-mWxcVa_PyU1?autoplay=1&mute=1"
+          <div class="video-overlay" id="videoOverlay1">
+            <button class="close-video" onclick="closeVideo('videoOverlay1', 'demoVideo1')">✕</button>
+            <div style="color: #fff; text-align: center; font-size: 1.2rem;">
+              <iframe id="demoVideo1"
+                src="https://www.youtube.com/embed/8PofujOQpDk?si=RbXC_09q5YGwdq-D&autoplay=1&mute=1"
                 title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
                 allowfullscreen>
               </iframe>
-              <!-- <div class="video-wrapper">
-              <iframe id="demoVideo"
-                src="https://www.youtube.com/embed/fSd1ADT9sb0?si=V8yB-mWxcVa_PyU1?autoplay=1&mute=1"
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-container" style="margin-bottom: 50px;">
+        <div class="video-title">
+          <h2>PART 2</h2>
+          <p>M* Iterative Concept-Type Path Retrieval and Query Decomposition. PART 2</p>
+        </div>
+        <div class="video-wrapper">
+
+          <div class="video-placeholder" onclick="playVideo('videoOverlay2', 'demoVideo2')">
+            <div class="play-button"></div>
+          </div>
+
+          <div class="video-overlay" id="videoOverlay2">
+            <button class="close-video" onclick="closeVideo('videoOverlay2', 'demoVideo2')">✕</button>
+            <div style="color: #fff; text-align: center; font-size: 1.2rem;">
+              <iframe id="demoVideo2"
+                src="https://www.youtube.com/embed/UFg3jfPVRd0?si=esydae9YOddraUU2&autoplay=1&mute=1"
                 title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
                 allowfullscreen>
               </iframe>
-            </div> -->
-            </p>
+            </div>
           </div>
         </div>
       </div>
+
     </section>
+
 
     <section class="features" id="features">
       <div class="container">
@@ -266,46 +283,91 @@
     </section>
   </main>
   <script>
-    function playVideo() {
-      const videoOverlay = document.getElementById('videoOverlay');
-      const video = document.getElementById('demoVideo');
+    // function playVideo() {
+    //   const videoOverlay = document.getElementById('videoOverlay');
+    //   const video = document.getElementById('demoVideo');
+
+    //   videoOverlay.classList.add('active');
+
+    //   // Auto-play the video when overlay opens
+    //   video.play().catch(e => {
+    //     console.log('Auto-play was prevented:', e);
+    //   });
+
+    //   // Pause background animations for better performance
+    //   document.body.style.animationPlayState = 'paused';
+    // }
+
+    // function closeVideo() {
+    //   const videoOverlay = document.getElementById('videoOverlay');
+    //   const video = document.getElementById('demoVideo');
+
+    //   videoOverlay.classList.remove('active');
+
+    //   // Pause and reset video
+    //   video.pause();
+    //   video.currentTime = 0;
+
+    //   // Resume background animations
+    //   document.body.style.animationPlayState = 'running';
+    // }
+
+    // Close video when clicking outside the video element
+    // document.getElementById('videoOverlay').addEventListener('click', function (e) {
+    //   if (e.target === this) {
+    //     closeVideo();
+    //   }
+    // });
+
+    // // Close video with Escape key
+    // document.addEventListener('keydown', function (e) {
+    //   if (e.key === 'Escape' && document.getElementById('videoOverlay').classList.contains('active')) {
+    //     closeVideo();
+    //   }
+    // });
+    function playVideo(overlayId, videoId) {
+      const videoOverlay = document.getElementById(overlayId);
+      const video = document.getElementById(videoId);
 
       videoOverlay.classList.add('active');
 
-      // Auto-play the video when overlay opens
-      video.play().catch(e => {
-        console.log('Auto-play was prevented:', e);
-      });
+      // Play the video
+      video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 
-      // Pause background animations for better performance
+      // Pause background animations
       document.body.style.animationPlayState = 'paused';
     }
 
-    function closeVideo() {
-      const videoOverlay = document.getElementById('videoOverlay');
-      const video = document.getElementById('demoVideo');
+    function closeVideo(overlayId, videoId) {
+      const videoOverlay = document.getElementById(overlayId);
+      const video = document.getElementById(videoId);
 
       videoOverlay.classList.remove('active');
 
-      // Pause and reset video
-      video.pause();
-      video.currentTime = 0;
+      // Stop the YouTube video
+      video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
 
       // Resume background animations
       document.body.style.animationPlayState = 'running';
     }
 
-    // Close video when clicking outside the video element
-    document.getElementById('videoOverlay').addEventListener('click', function (e) {
-      if (e.target === this) {
-        closeVideo();
-      }
+    // Close video when clicking outside
+    document.querySelectorAll('.video-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function (e) {
+        if (e.target === this) {
+          const videoId = this.querySelector('iframe').id;
+          closeVideo(this.id, videoId);
+        }
+      });
     });
 
     // Close video with Escape key
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && document.getElementById('videoOverlay').classList.contains('active')) {
-        closeVideo();
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.video-overlay.active').forEach(overlay => {
+          const videoId = overlay.querySelector('iframe').id;
+          closeVideo(overlay.id, videoId);
+        });
       }
     });
   </script>
@@ -316,5 +378,68 @@
     </div>
   </footer>
 </body>
+<style>
+  /* .video-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  } */
+
+  /* .video-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+  } */
+
+  /* .video-title {
+    margin-bottom: 20px;
+  } */
+
+  /* .video-placeholder {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+
+  /* .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  } */
+
+  /* .video-overlay.active {
+    display: flex;
+  }
+
+  .video-overlay iframe {
+    width: 80%;
+    height: 80%;
+  } */
+
+  /* .close-video {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  } */
+</style>
 
 </html>
