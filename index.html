@@ -53,6 +53,8 @@
 
   <script type="module" crossorigin src="assets/index-D1Ca35dq.js"></script>
   <link rel="stylesheet" crossorigin href="assets/index-DB_3HkZQ.css">
+  <link rel="stylesheet" crossorigin href="assets/blog.css">
+
 </head>
 
 <body>
@@ -65,6 +67,7 @@
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#blog">Blog</a></li>
       </ul>
     </nav>
   </header>
@@ -74,12 +77,12 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1>M*: Next-Gen Knowledge Inference</h1>
+            <h1 style="justify-content: left;">M*: Next-Gen Knowledge Inference</h1>
             <p>Transform your data in any shape into intelligent, interconnected knowledge networks. Mstar
               revolutionizes how AI
               systems understand and retrieve complex information through advanced graph-based retrieval.</p>
             <div class="hero-buttons">
-              <a href="#" class="cta-button">Start Free Trial</a>
+              <a href="#contact" class="cta-button">Join Demo</a>
               <a href="#demo" class="btn-secondary">Watch Demo</a>
             </div>
           </div>
@@ -103,60 +106,13 @@
         <div class="floating-element"></div>
       </div>
 
-
-      <!-- Video 1 -->
-      <div class="video-container" style="margin-bottom: 50px;">
-        <div class="video-title">
-          <h2>PART 1</h2>
-          <p>M* Iterative Concept-Type Path Retrieval and Query Decomposition. PART 1</p>
-        </div>
-        <div class="video-wrapper">
-
-          <div class="video-placeholder" onclick="playVideo('videoOverlay1', 'demoVideo1')">
-            <div class="play-button"></div>
-          </div>
-
-          <div class="video-overlay" id="videoOverlay1">
-            <button class="close-video" onclick="closeVideo('videoOverlay1', 'demoVideo1')">✕</button>
-            <div style="color: #fff; text-align: center; font-size: 1.2rem;">
-              <iframe id="demoVideo1"
-                src="https://www.youtube.com/embed/8PofujOQpDk?si=RbXC_09q5YGwdq-D&autoplay=1&mute=1"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-
+      <div class="video-container-blog">
+        <video controls muted playsinline controlslist="nodownload" class="blog-video">
+          <source src="assets/input.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-caption">M* Iterative Concept-Type Path Retrieval and Query Decomposition - PART 1</p>
       </div>
-
-      <!-- Video 2 -->
-      <div class="video-container" style="margin-bottom: 50px;">
-        <div class="video-title">
-          <h2>PART 2</h2>
-          <p>M* Iterative Concept-Type Path Retrieval and Query Decomposition. PART 2</p>
-        </div>
-        <div class="video-wrapper">
-
-          <div class="video-placeholder" onclick="playVideo('videoOverlay2', 'demoVideo2')">
-            <div class="play-button"></div>
-          </div>
-
-          <div class="video-overlay" id="videoOverlay2">
-            <button class="close-video" onclick="closeVideo('videoOverlay2', 'demoVideo2')">✕</button>
-            <div style="color: #fff; text-align: center; font-size: 1.2rem;">
-              <iframe id="demoVideo2"
-                src="https://www.youtube.com/embed/UFg3jfPVRd0?si=esydae9YOddraUU2&autoplay=1&mute=1"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
 
@@ -254,6 +210,32 @@
         </div>
       </div>
     </section>
+    <section class="cta-section" id="blog">
+      <h2 class="section-title">Articles</h2>
+      <p class="section-subtitle">You might find these articles interesting </p>
+      <div class="related-posts">
+        <!-- <h3>Related Articles</h3> -->
+        <div class="posts-grid">
+          <a href="blog-1.html" class="post-card">
+            <h4>Current state of the LLM: General overview of the technology</h4>
+            <p>Current state of the LLM based AI retrievals and true cost of them</p>
+            <span class="post-date">September 07, 2025</span>
+          </a>
+          <!-- <a href="blog-graph-visualization.html" class="post-card">
+            <h4>Visualizing Complexity: Best Practices for Graph Visualization</h4>
+            <p>Learn the art and science of creating intuitive, beautiful visualizations of complex graph structures.
+            </p>
+            <span class="post-date">September 15, 2025</span>
+          </a>
+          <a href="blog-ai-transparency.html" class="post-card">
+            <h4>The Transparency Imperative: Making AI Explainable</h4>
+            <p>Why model transparency matters and how knowledge graphs are leading the way in explainable AI.</p>
+            <span class="post-date">September 05, 2025</span>
+          </a> -->
+        </div>
+      </div>
+
+    </section>
 
     <section class="cta-section" id="contact">
       <div class="container">
@@ -283,93 +265,6 @@
     </section>
   </main>
   <script>
-    // function playVideo() {
-    //   const videoOverlay = document.getElementById('videoOverlay');
-    //   const video = document.getElementById('demoVideo');
-
-    //   videoOverlay.classList.add('active');
-
-    //   // Auto-play the video when overlay opens
-    //   video.play().catch(e => {
-    //     console.log('Auto-play was prevented:', e);
-    //   });
-
-    //   // Pause background animations for better performance
-    //   document.body.style.animationPlayState = 'paused';
-    // }
-
-    // function closeVideo() {
-    //   const videoOverlay = document.getElementById('videoOverlay');
-    //   const video = document.getElementById('demoVideo');
-
-    //   videoOverlay.classList.remove('active');
-
-    //   // Pause and reset video
-    //   video.pause();
-    //   video.currentTime = 0;
-
-    //   // Resume background animations
-    //   document.body.style.animationPlayState = 'running';
-    // }
-
-    // Close video when clicking outside the video element
-    // document.getElementById('videoOverlay').addEventListener('click', function (e) {
-    //   if (e.target === this) {
-    //     closeVideo();
-    //   }
-    // });
-
-    // // Close video with Escape key
-    // document.addEventListener('keydown', function (e) {
-    //   if (e.key === 'Escape' && document.getElementById('videoOverlay').classList.contains('active')) {
-    //     closeVideo();
-    //   }
-    // });
-    function playVideo(overlayId, videoId) {
-      const videoOverlay = document.getElementById(overlayId);
-      const video = document.getElementById(videoId);
-
-      videoOverlay.classList.add('active');
-
-      // Play the video
-      video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-
-      // Pause background animations
-      document.body.style.animationPlayState = 'paused';
-    }
-
-    function closeVideo(overlayId, videoId) {
-      const videoOverlay = document.getElementById(overlayId);
-      const video = document.getElementById(videoId);
-
-      videoOverlay.classList.remove('active');
-
-      // Stop the YouTube video
-      video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-
-      // Resume background animations
-      document.body.style.animationPlayState = 'running';
-    }
-
-    // Close video when clicking outside
-    document.querySelectorAll('.video-overlay').forEach(overlay => {
-      overlay.addEventListener('click', function (e) {
-        if (e.target === this) {
-          const videoId = this.querySelector('iframe').id;
-          closeVideo(this.id, videoId);
-        }
-      });
-    });
-
-    // Close video with Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.video-overlay.active').forEach(overlay => {
-          const videoId = overlay.querySelector('iframe').id;
-          closeVideo(overlay.id, videoId);
-        });
-      }
-    });
   </script>
 
   <footer>
@@ -379,67 +274,31 @@
   </footer>
 </body>
 <style>
-  /* .video-demo {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-  } */
-
-  /* .video-container {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-  } */
-
-  /* .video-title {
-    margin-bottom: 20px;
-  } */
-
-  /* .video-placeholder {
-    position: relative;
-    width: 100%;
-    height: 450px;
-    background: #000;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-
-  /* .video-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  } */
-
-  /* .video-overlay.active {
-    display: flex;
+  .video-container-blog {
+    width: 90%;
+    margin: 1rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
   }
 
-  .video-overlay iframe {
-    width: 80%;
-    height: 80%;
-  } */
+  .blog-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
 
-  /* .close-video {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    background: transparent;
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  } */
+  .video-caption {
+    padding: 1rem;
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+  }
 </style>
 
 </html>
